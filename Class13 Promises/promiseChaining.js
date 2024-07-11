@@ -22,9 +22,6 @@ cleanRoom()
     console.log(result);
     return garbageRemove();
   })
-  .catch((error) => {
-    console.log(error, "first catch");
-  })
   .then((result) => {
     console.log(result);
     return winIcecream();
@@ -33,5 +30,5 @@ cleanRoom()
     console.log(result);
   })
   .catch((error) => {
-    console.log(error, "second catch");
+    console.log(error);
   });
