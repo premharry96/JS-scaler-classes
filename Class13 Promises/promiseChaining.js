@@ -32,3 +32,14 @@ cleanRoom()
   .catch((error) => {
     console.log(error);
   });
+
+fetchByPromise(file1).then((res) => {
+  ansArray.push(res);
+  fetchByPromise(file2)
+    .then((res) => {
+      ansArray.push(res);
+    })
+    .then(() => {
+      ansArray.push("All files have been read");
+    });
+});
