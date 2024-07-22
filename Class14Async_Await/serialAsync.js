@@ -22,17 +22,25 @@ const generateBill = (procOrder) => {
   });
 };
 
+//Async await
 const handlingOrder = async () => {
-  let isOrderPlaced = placeOrder("coffee");
-  let isPromiseHandled = await isOrderPlaced;
-  console.log(isPromiseHandled);
-  let orderPromise = await orderProcessed("001 - coffee");
-  console.log(orderPromise);
-  let billPromise = await generateBill("001 - coffee");
-  console.log(billPromise);
+  try {
+    let isOrderPlaced = placeOrder("coffee");
+    let isPromiseHandled = await isOrderPlaced;
+    console.log(isPromiseHandled);
+    let orderPromise = await orderProcessed("001 - coffee");
+    console.log(orderPromise);
+    let billPromise = await generateBill("001 - coffee");
+    console.log(billPromise);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    console.log("done");
+  }
 };
-
+console.log("start");
 handlingOrder();
+console.log("end");
 
 // placeOrder("coffe")
 //   .then((data) => {
