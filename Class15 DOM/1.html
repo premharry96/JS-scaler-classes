@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="hello-btn" class="btn">Say Hello</button>
+    <button id="bye-btn" class="btn">Say Bye</button>
+
+    <script>
+      // 1.Selecting by ID
+      const helloBtn = document.getElementById("hello-btn");
+      const byeBtn = document.getElementById("bye-btn");
+      //   console.log(helloBtn);
+      //   console.log(byeBtn);
+
+      // 2.Selecting by class
+      //   const btns = document.getElementsByClassName("btn");
+      //   console.log(btns);
+      //   const helloBtn = btns[0];
+      //   const byeBtn = btns[1];
+      //   console.log(helloBtn);
+      //   console.log(byeBtn);
+
+      //   3.Selecting using querySelector
+      //   const _btns = document.querySelectorAll("button");
+      //   console.log(_btns);
+
+      helloBtn.addEventListener("click", (event) => {
+        const div = document.createElement("div");
+        div.innerText = "hello";
+        const body = document.querySelector("body");
+        body.appendChild(div);
+        console.log(div);
+      });
+    </script>
+  </body>
+</html>
